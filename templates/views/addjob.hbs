@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Job</title>
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/regi.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <style>
+
+        .user-details{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 20px 0 12px 0;
+            width: 63rem;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+                margin-top: 3rem;
+        }
+
+    </style>
+
+</head>
+<body>
+   
+  {{> admin_navbar}}
+    
+    <div class="container">
+    <div class="title">Add Job</div>
+    <div class="content">
+      <form method="post" action="/addjob" >
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">
+                
+            </span>
+            <input type="text"  placeholder="Job Title" name="job_title" required>
+          </div>
+          
+
+            <div class="input-box">
+              <span class="details">
+              </span>
+              <select name="select_company" id="state" class="form-control" aria-placeholder="Select Company"  required>
+                <option value="#" id="s_company">--Select Company--</option>
+                {{!-- <option value="google">google</option> --}}
+              
+              </select>
+            </div>
+
+            <div class="input-box">
+              <span class="details">
+              </span>
+              <select id="country" name="job_type">
+                
+                <option value="#" >--Select Job Type--</option>
+                <option value="full_time ">full time </option>
+                <option value="part_time">part time</option>
+                
+              </select>
+            </div>
+
+
+          <div class="input-box">
+            <span class="details">
+                
+            </span>
+            <input type="text"  placeholder="Skill required" name="skills" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">
+                
+            </span>
+            <input type="text"  placeholder="City" name="city" required>
+          </div>
+            
+            {{!-- <div class="input-box">
+              <span class="details">
+                  
+
+              </span>
+              <textarea name="address" id="address" cols="20" rows="7" placeholder="Address" required></textarea>
+              
+            </div> --}}
+            <div class="input-box">
+              <span class="details">
+              </span>
+              <textarea name="description" id="description" cols="20" rows="7" placeholder="Description" required></textarea>
+              
+            </div>
+          </div>
+          <div class="button">
+            <input type="submit"  value="Add">
+          </div>
+        </div>
+      </form>
+    </div>
+    
+  </div>
+  
+
+
+
+  <script>
+
+        fetch("http://localhost:8080/showdatabase").then(
+        res => {
+            res.json().then(
+            data => {
+                console.log(data.c_name);
+                if (data.length > 0) {
+
+                var select = document.getElementById('state')  
+                
+                data.forEach((itemData) => {
+                   
+                  myOption = document.createElement("option");
+                  myOption.text = `${itemData.c_name}`;
+                  myOption.value =  `${itemData.c_name}`;
+                  select.appendChild(myOption);
+                });
+               
+                }
+            }
+            )
+        }
+        );
+
+</script>
+
+{{!-- <script>
+
+fetch("http://localhost:8080/showdatabase").then(
+  res => {
+    res.json().then(
+      data => {
+        console.log(data);
+        if (data.length > 0) {
+
+          var temp = "";
+          data.forEach((itemData) => {
+            temp += "<option value="#">--Select Company--</option>";
+            temp += "<option value="#">--Select Company--</option>";
+            temp += "<td>" + mitemData.id + "</td>";
+            temp += "<td>" + itemData.first_name + "</td>";
+            temp += "<td>" + itemData.email_address + "</td>";
+          });
+          document.getElementById('s_company').innerHTML = temp;
+          }
+      }
+    )
+  }
+)
+
+</script> --}}
+
+
+
+    
+</body>
+</html>

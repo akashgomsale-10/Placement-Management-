@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/style.css">
+    {{!-- <link rel="stylesheet" href="/css/regi.css"> --}}
+
+    <title>View Job</title>
+    
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+      body {
+            height: 100%;
+
+            /* padding: 10px; */
+            background: linear-gradient(135deg, #53e5d1, #c1c27f);
+    }
+      
+      #main {
+        
+        font-family: "Ubuntu", sans-serif;
+        border: 1px solid #ddd;
+        width: 55rem;
+        background: white;
+        font-family: "Ubuntu", sans-serif;
+        margin: 5rem auto;
+        padding: 2rem;
+        font-size: initial;
+        border-radius: 2rem;
+      }
+      #card {
+        /* border: 2px solid rgb(229, 235, 235); */
+        /* width: 50%;   */
+        height: auto;
+        border-radius: 2rem;
+        box-shadow :5px -2px 10px 1px rgb(104 165 171 / 78%);
+        
+        margin-top: 2rem;
+      }
+
+      table,
+      td,
+      th {
+        border: 1px solid rgb(238, 236, 236);
+        padding: 1rem;
+        table-layout: auto;
+        width: 50%;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: "Ubuntu", sans-serif;
+      }
+      tr:hover {
+        box-shadow: 2px 1px 10px 2px rgba(238, 240, 237, 0.938);
+      }
+      tr:nth-child(odd) {
+        background-color: #f2f2f2;
+      }
+      tr:hover {
+        background-color: #ddd;
+      }
+      #btn {
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        background-color: rgb(189, 192, 191);
+        border: none;
+        border-radius: 5px;
+        font-size: large;
+        font-family: ubuntu, "sans-serif";
+      }
+      #btn:hover {
+        box-shadow: 2px 1px 4px rgb(216, 236, 215);
+      }
+      #btn-div {
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+
+  </head>
+  <body>
+  
+{{>user_navbar}}
+
+{{!-- // view job // --}}
+
+    <div class="cards" id="job-card">
+        {{!-- <main id="main">
+        <div id="card">
+            <table>
+            <tr>
+                <td>Job Title</td>
+                <td>Java Developer</td>
+            </tr>
+            <tr>
+                <td>Company Name</td>
+                <td>Google</td>
+            </tr>
+            <tr>
+                <td>Job Type</td>
+                <td>Full Time</td>
+            </tr>
+            <tr>
+                <td>Skills</td>
+                <td>Java, JavaScript</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>Latur</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>Join hone ke baad btata</td>
+            </tr>
+            </table>
+        </div>
+        <div id="btn-div">
+            <button id="btn">Apply Now!</button>
+        </div>
+        </main> --}}
+
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+
+
+
+
+
+
+
+<script>
+        fetch("http://localhost:8080/jobdatabase").then(
+        res => {
+            res.json().then(
+            data => {
+                console.log(data);
+                if (data.length > 0) {
+                
+                var jobcard = document.getElementById('job-card');
+                
+                data.forEach((itemData) => {
+                   
+                    {var main = document.createElement('main');
+                    main.id = 'main';
+                    var newdiv = document.createElement('div');
+                    newdiv.id = 'card';
+
+                    var div1 = document.createElement('div');
+                    div1.id = 'btn-div';
+
+                    var button = document.createElement('button');
+                    button.type = 'button';
+                    button.id = 'btn';
+                    button.innerHTML = 'Apply Now!';}
+
+                    div1.appendChild(button);
+
+                    var table = document.createElement('table');
+
+                    {var tr1 = document.createElement('tr');
+                    var tr2 = document.createElement('tr');
+                    var tr3 = document.createElement('tr');
+                    var tr4 = document.createElement('tr');
+                    var tr5 = document.createElement('tr');
+                    var tr6 = document.createElement('tr');}
+
+                    {var td11 = document.createElement('td');
+                    var td1 = document.createElement('td');
+                    var td22 = document.createElement('td');
+                    var td2 = document.createElement('td');
+                    var td33 = document.createElement('td');
+                    var td3 = document.createElement('td');
+                    var td44 = document.createElement('td');
+                    var td4 = document.createElement('td');
+                    var td55 = document.createElement('td');
+                    var td5 = document.createElement('td');
+                    var td66 = document.createElement('td');
+                    var td6 = document.createElement('td');}
+
+                    {var text11 = document.createTextNode(`Job Title`);
+                    var text1 = document.createTextNode(`${itemData.job_title}`);
+                    var text22 = document.createTextNode(`Company Name`);
+                    var text2 = document.createTextNode(`${itemData.select_company}`);
+                    var text33 = document.createTextNode(`Job Type`);
+                    var text3 = document.createTextNode(`${itemData.job_type}`);
+                    var text44 = document.createTextNode(`Skills`);
+                    var text4 = document.createTextNode(`${itemData.skills}`);
+                    var text55 = document.createTextNode(`City`)
+                    var text5 = document.createTextNode(`${itemData.city}`)
+                    var text66 = document.createTextNode(`Description`);
+                    var text6 = document.createTextNode(`${itemData.description}`);}
+
+                    {td11.appendChild(text11);
+                    td1.appendChild(text1);
+                    td22.appendChild(text22);
+                    td2.appendChild(text2);
+                    td33.appendChild(text33);
+                    td3.appendChild(text3);
+                    td44.appendChild(text44);
+                    td4.appendChild(text4);
+                    td55.appendChild(text55);
+                    td5.appendChild(text5);
+                    td66.appendChild(text66);
+                    td6.appendChild(text6);}
+
+                    {tr1.appendChild(td11);
+                    tr1.appendChild(td1);
+                    tr2.appendChild(td22);
+                    tr2.appendChild(td2);
+                    tr3.appendChild(td33);
+                    tr3.appendChild(td3);
+                    tr4.appendChild(td44);
+                    tr4.appendChild(td4);
+                    tr5.appendChild(td55);
+                    tr5.appendChild(td5);
+                    tr6.appendChild(td66);
+                    tr6.appendChild(td6);}
+
+                    {table.appendChild(tr1);
+                    table.appendChild(tr2);
+                    table.appendChild(tr3);
+                    table.appendChild(tr4);
+                    table.appendChild(tr5);
+                    table.appendChild(tr6);}
+
+                    newdiv.appendChild(table);
+
+                    main.appendChild(newdiv)
+                    main.appendChild(div1)
+
+                    jobcard.appendChild(main)           
+                });
+                }
+            }
+            )
+        }
+        );
+
+    </script>
+
+    {{!-- <script>
+        fetch("http://localhost:8080/jobdatabase").then(
+        res => {
+            res.json().then(
+            data => {
+                console.log(data);
+                if (data.length > 0) {
+                
+                var jobCard = document.getElementById('job-card');
+                var temp = "";
+                data.forEach((itemData) => {
+                    temp += `<main id="main">
+                            <div id="card">
+                                <table>
+                                <tr>
+                                    <td>Job Title</td>
+                                    <td>${itemData.job_title}</td>
+                                </tr>
+                                <tr>
+                                    <td>Company Name</td>
+                                    <td>${itemData.select_company}</td>
+                                </tr>
+                                <tr>
+                                    <td>Job Type</td>
+                                    <td>${itemData.job_type}</td>
+                                </tr>
+                                <tr>
+                                    <td>Skills</td>
+                                    <td>${itemData.skills}</td>
+                                </tr>
+                                <tr>
+                                    <td>City</td>
+                                    <td>${itemData.city}</td>
+                                </tr>
+                                <tr>
+                                    <td>Description</td>
+                                    <td>${itemData.description}</td>
+                                </tr>
+                                </table>
+                            </div>
+                            <div id="btn-div">
+                                <button id="btn">Apply Now!</button>
+                            </div>
+                            </main> 
+        `
+                jobCard.innerHTML = temp;
+                temp = "";
+                             
+                });
+                
+                }
+            }
+            )
+        }
+        );
+
+    </script> --}}
+
+  </body>
+</html>

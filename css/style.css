@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+html {
+    font-size: 63.5%;
+}
+
+body {
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    /* background-color: #b0b67e; */
+}
+.row {
+    margin: 0;
+}
+
+.main_menu{
+    background-color: black;
+}
+.navbar {
+    color: white;
+    background-color: black;
+    padding: 2rem 0;
+}
+.navbar li{
+    margin-left: 2rem;
+}
+.navbar a{
+    color: white;
+    font-size: 1.8rem;
+}
+.navbar-toggler {
+    background-color: grey;
+}
+
+
+#navright{
+    font-size: 14px;
+}
+
+
+.main-header{
+    background-color: burlywood;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+#intro{
+    height: 50rem;
+    /* color: purple; */
+    width: 100%;
+    background: url("https://source.unsplash.com/collection/190727/1600x900");
+    background: rgb(165, 165, 165) ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+#intro div.heading {
+    font-size: 42px;
+    font-weight: bold;
+    color: rgb(43, 26, 26);
+}
+#intro div.para {
+    align-items: center;
+    font-size: 17px;
+    margin: 0px 18rem;
+    font-weight: inherit;
+    color: rgb(18, 15, 26);
+}
+
+#middle{
+    height: 35rem;
+    /* color: purple; */
+    width: 100%;
+    /* background: url("https://source.unsplash.com/collection/190727/1600x900"); */
+    background: rgb(225, 250, 240) ;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+
+}
+#middle div.heading {
+    font-size: 42px;
+    font-weight: bold;
+    color: rgb(175, 175, 175);
+}
+
+.pre-head{
+    text-align: center;
+    font-size: 3rem;
+}
+.mid{
+    display: flex;
+    flex-direction: inherit;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 4rem;
+}
+
+
+
+.about{
+    background-color: rgb(175, 175, 175);
+}
+.about-head{
+    margin: 1rem 2rem;
+}
+.inside{
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,35 @@
+/* function deleteNote(id){
+    fetch("http://localhost:8080/deletecompany"+id,{
+        method: "delete"
+
+    }).then((result) => {
+        result.json().then((resp) => {
+                alert('company is been Deleted');
+                console.log("Company")
+                this.getdata();
+            )}
+    })
+} 
+*/
+
+
+
+ {{!-- "<tr>";
+                            temp += "<td>" + '<input type="checkbox" name="name" />' + "</td>";
+                            temp += "<td>" + itemData.c_id + "</td>";
+                            temp += "<td>" + '<img src="" alt="">' + "</td>";
+                            temp += "<td>" + {{itemData.c_name}}+ "</td>";
+                            temp += "<td>" + itemData.c_email + "</td>";
+                            temp += "<td>" + itemData.contact_no + "</td>";
+                            temp += "<td>" + itemData.web_name + "</td>";
+                            temp += "<td>" + itemData.city + "</td>";
+                            temp += "<td>" + itemData.country + "</td>";
+                            temp += "<td>" + itemData.state + "</td>";
+                            temp += "<td>" + itemData.address + "</td>";
+                            temp += "<td>" + itemData.description + "</td>";
+                            temp += "<td>" + ' <button  id="btn"  > Delete </button>' + "</td>";  
+                            
+                            --}}
+                            
+                            
+                        

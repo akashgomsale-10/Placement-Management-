@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/regi.css">
+
+    <style>
+        .input-box{
+                display: flex;
+                padding: 0;
+    margin-right: inherit;
+        }
+        .details{
+            font-size: 15px;
+            padding: 17px;  
+        }
+
+        .content form .user-details {
+            display: flex;
+            /* flex-wrap: wrap; */
+            /* justify-content: space-between; */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0 12px 0;
+        }
+
+        
+        .input-box {
+            
+            width: 50%;
+        }
+
+        .user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    /* border-bottom-width: 2px; */
+    transition: all 0.3s ease;
+}
+form .user-details .input-box {
+    margin-bottom: 15px;
+    /* width: calc(100% / 2 - 20px); */
+    width: 53%;
+}
+        
+
+
+    </style>
+
+    <title>profile Page</title>
+    
+
+  </head>
+  <body>
+  
+{{>user_navbar}}
+
+
+{{!--  profile  --}}
+  
+  <div class="container" id="profile_id">
+    
+    
+  </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<script >
+
+    fetch("http://localhost:8080/userdata").then(
+        res => {
+            res.json().then(
+            data => {
+                console.log(data);
+                if (data.length > 0) {
+
+                var temp = "";
+                data.forEach((itemData) => {
+                    console.log(itemData.email_address + "ADDRESS ")
+                    if(itemData.email_address == "{{email}}"){
+                        console.log(" hiii ")
+                        temp += `
+                                <div class="title">profile</div>
+                                <div class="content">
+                                <form method="post" action="register">
+                                    <div class="user-details">
+                                    <div class="input-box">
+                                        <span class="details">
+                                           First Name
+                                        </span>
+                                        <input type="text"  placeholder="first name" name="first_name" value="${itemData.first_name}" required>
+                                    </div>
+                                    <div class="input-box">
+                                        <span class="details">
+                                            Last Name
+
+                                        </span>
+                                        <input type="text"  placeholder="last name" name="last_name" value="${itemData.last_name}"  required>
+                                    </div>
+                                    <div class="input-box">
+                                        <span class="details">
+                                            Email 
+
+                                        </span>
+                                        <input type="email"  placeholder="Enter your email" name="email_address" value="${itemData.email_address}"  required>
+                                    </div>
+                                    <div class="input-box">
+                                        <span class="details">
+                                           Phone Number
+
+                                        </span>
+                                        <input type="tel"  placeholder="Enter your number" name="phone_no" value="${itemData.phone_no}" required>
+                                    </div>
+                                    
+                                    <div class="button">
+                                    <input type="submit" value="Register">
+                                    </div>
+                                    </form>
+                                </div>  
+                    
+                                `
+                    }
+                    
+                             
+                });
+                document.getElementById('profile_id').innerHTML = temp;
+                }
+            }
+            )
+        }
+        );
+
+
+</script>
+
+  </body>
+</html>

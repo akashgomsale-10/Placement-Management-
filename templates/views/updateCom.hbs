@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Company</title>
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/regi.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+</head>
+<body>
+    <div class="containter-fluid main_menu">
+        <div class="row">
+            <div class="col-md-10 col 12 mx-auto">
+              <nav class="navbar navbar-expand-lg ">
+                <a class="navbar-brand" href="#">Placement</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/dash" id="navright">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/addcompany" id="navright">Add Company</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/companyreport" id="navright">Company info</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/addjob" id="navright">Add Job</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                      <a class="nav-link" href="/logout" id="navright">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#" id="navright">Hey admin@gmail.com</a>
+                    </li>
+                   
+                </div>
+              </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+    <div class="title">Update Company Info</div>
+    <div class="content">
+
+      <form method="post" action="/updatecc" >
+        <input name="c_id" value="{{c_id}}" type="hidden">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">
+                
+            </span>
+            <input type="text"  placeholder="Name" name="c_name" value=" {{c_name}}"   required>
+          </div>
+          <div class="input-box">
+            <span class="details">
+                
+
+            </span>
+            <input type="text"  placeholder="Website" name="web_name" value="{{web_name}}"  required>
+          </div>
+          <div class="input-box">
+            <span class="details">
+                
+            </span>
+            <input type="email"  placeholder="Email" name="c_email" value="{{c_email}}" required>
+          </div>
+          <div class="input-box">
+            <span class="details">
+                
+
+            </span>
+            <input type="tel"  placeholder="Contact" name="contact_no" value="{{contact_no}}" required>
+          </div>
+          
+          <div class="input-box">
+            <span class="details">
+                
+            </span>
+            <input type="text"  placeholder="City" name="city" value="{{city}}" required>
+          </div>
+            <div class="input-box">
+              <span class="details">
+                  
+
+              </span>
+              <select id="country" name="country">
+                
+                <option value="{{country}}">{{country}}</option>
+                
+              </select>
+              
+            </div>
+            <div class="input-box">
+              <span class="details">
+                  
+
+              </span>
+              <select name="state" id="state" class="form-control" required>
+                <option value="{{state}}">{{state}}</option>
+              
+              </select>
+              
+            </div>
+            <div class="input-box">
+              <span class="details">
+              </span>
+              <textarea name="address" id="address" cols="20" rows="7" placeholder="Address" required>{{address}}</textarea>
+              
+            </div>
+             
+
+            <div class="input-box">
+              <span class="details">
+                  <!-- Confirm Password -->
+
+              </span>
+              <textarea name="description" id="description" cols="20" rows="7" placeholder="Description" required>{{description}}</textarea>
+              
+            </div>
+          </div>
+          <div class="button">
+            <input type="submit"  value="update">
+          </div>
+        </div>
+      </form>
+    </div>
+    
+  </div>
+               
+    
+</body>
+</html>
